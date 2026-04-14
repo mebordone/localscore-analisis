@@ -1,0 +1,15 @@
+# Datos y exploración
+pandas>=2.0
+matplotlib>=3.7
+seaborn>=0.12
+
+# ML (árboles de decisión)
+scikit-learn>=1.3
+
+# Notebooks
+jupyter>=1.0
+
+# SQLite viene con Python (sqlite3), no hace falta instalar nada
+
+# Transcripción de entrevistas (opcional): .venv/bin/pip install faster-whisper
+# faster-whisper>=1.0

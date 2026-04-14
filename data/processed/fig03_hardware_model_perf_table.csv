@@ -1,0 +1,106 @@
+H,M,perf_category,n_runs,pct_within_HM
+H1,M1,Batch,7,63.63636363636363
+H1,M1,Interactivo mínimo,3,27.27272727272727
+H1,M1,Interactivo fluido,1,9.090909090909092
+H1,M2,Batch,19,52.77777777777778
+H1,M2,Interactivo mínimo,13,36.11111111111111
+H1,M2,Interactivo fluido,4,11.11111111111111
+H1,M3,Batch,0,0.0
+H1,M3,Interactivo mínimo,0,0.0
+H1,M3,Interactivo fluido,0,0.0
+H1,M4,Batch,4,100.0
+H1,M4,Interactivo mínimo,0,0.0
+H1,M4,Interactivo fluido,0,0.0
+H1,M5,Batch,0,0.0
+H1,M5,Interactivo mínimo,0,0.0
+H1,M5,Interactivo fluido,0,0.0
+H2,M1,Batch,0,0.0
+H2,M1,Interactivo mínimo,2,100.0
+H2,M1,Interactivo fluido,0,0.0
+H2,M2,Batch,18,20.930232558139537
+H2,M2,Interactivo mínimo,35,40.69767441860465
+H2,M2,Interactivo fluido,33,38.372093023255815
+H2,M3,Batch,6,54.54545454545454
+H2,M3,Interactivo mínimo,5,45.45454545454545
+H2,M3,Interactivo fluido,0,0.0
+H2,M4,Batch,27,100.0
+H2,M4,Interactivo mínimo,0,0.0
+H2,M4,Interactivo fluido,0,0.0
+H2,M5,Batch,3,100.0
+H2,M5,Interactivo mínimo,0,0.0
+H2,M5,Interactivo fluido,0,0.0
+H3,M1,Batch,0,0.0
+H3,M1,Interactivo mínimo,0,0.0
+H3,M1,Interactivo fluido,7,100.0
+H3,M2,Batch,9,4.0358744394618835
+H3,M2,Interactivo mínimo,50,22.421524663677133
+H3,M2,Interactivo fluido,164,73.54260089686099
+H3,M3,Batch,9,75.0
+H3,M3,Interactivo mínimo,3,25.0
+H3,M3,Interactivo fluido,0,0.0
+H3,M4,Batch,148,80.87431693989072
+H3,M4,Interactivo mínimo,34,18.579234972677597
+H3,M4,Interactivo fluido,1,0.546448087431694
+H3,M5,Batch,10,66.66666666666666
+H3,M5,Interactivo mínimo,5,33.33333333333333
+H3,M5,Interactivo fluido,0,0.0
+H4,M1,Batch,0,0.0
+H4,M1,Interactivo mínimo,0,0.0
+H4,M1,Interactivo fluido,3,100.0
+H4,M2,Batch,0,0.0
+H4,M2,Interactivo mínimo,7,14.583333333333334
+H4,M2,Interactivo fluido,41,85.41666666666666
+H4,M3,Batch,0,0.0
+H4,M3,Interactivo mínimo,5,71.42857142857143
+H4,M3,Interactivo fluido,2,28.57142857142857
+H4,M4,Batch,3,25.0
+H4,M4,Interactivo mínimo,1,8.333333333333332
+H4,M4,Interactivo fluido,8,66.66666666666666
+H4,M5,Batch,0,0.0
+H4,M5,Interactivo mínimo,0,0.0
+H4,M5,Interactivo fluido,0,0.0
+H5,M1,Batch,0,0.0
+H5,M1,Interactivo mínimo,0,0.0
+H5,M1,Interactivo fluido,1,100.0
+H5,M2,Batch,2,1.0869565217391304
+H5,M2,Interactivo mínimo,8,4.3478260869565215
+H5,M2,Interactivo fluido,174,94.56521739130434
+H5,M3,Batch,0,0.0
+H5,M3,Interactivo mínimo,2,14.285714285714285
+H5,M3,Interactivo fluido,12,85.71428571428571
+H5,M4,Batch,18,7.468879668049793
+H5,M4,Interactivo mínimo,63,26.141078838174277
+H5,M4,Interactivo fluido,160,66.39004149377593
+H5,M5,Batch,0,0.0
+H5,M5,Interactivo mínimo,0,0.0
+H5,M5,Interactivo fluido,0,0.0
+H6,M1,Batch,0,0.0
+H6,M1,Interactivo mínimo,0,0.0
+H6,M1,Interactivo fluido,3,100.0
+H6,M2,Batch,1,0.6802721088435374
+H6,M2,Interactivo mínimo,7,4.761904761904762
+H6,M2,Interactivo fluido,139,94.5578231292517
+H6,M3,Batch,0,0.0
+H6,M3,Interactivo mínimo,2,15.384615384615385
+H6,M3,Interactivo fluido,11,84.61538461538461
+H6,M4,Batch,7,3.4653465346534658
+H6,M4,Interactivo mínimo,58,28.71287128712871
+H6,M4,Interactivo fluido,137,67.82178217821783
+H6,M5,Batch,3,30.0
+H6,M5,Interactivo mínimo,2,20.0
+H6,M5,Interactivo fluido,5,50.0
+H7,M1,Batch,0,0.0
+H7,M1,Interactivo mínimo,0,0.0
+H7,M1,Interactivo fluido,0,0.0
+H7,M2,Batch,0,0.0
+H7,M2,Interactivo mínimo,0,0.0
+H7,M2,Interactivo fluido,19,100.0
+H7,M3,Batch,0,0.0
+H7,M3,Interactivo mínimo,0,0.0
+H7,M3,Interactivo fluido,0,0.0
+H7,M4,Batch,0,0.0
+H7,M4,Interactivo mínimo,8,30.76923076923077
+H7,M4,Interactivo fluido,18,69.23076923076923
+H7,M5,Batch,0,0.0
+H7,M5,Interactivo mínimo,0,0.0
+H7,M5,Interactivo fluido,0,0.0

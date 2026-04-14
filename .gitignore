@@ -1,0 +1,41 @@
+# Carpeta privada (proceso interno, entrevistas, borradores)
+private/
+
+# Entornos virtuales
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs de proceso
+*.log
+
+# LaTeX auxiliares
+*.aux
+*.out
+*.synctex.gz
+
+# Archivos comprimidos
+*.zip
+
+# Binarios de audio/video (datos privados)
+*.mkv
+*.mp3
+*.mp4
+
+# PDFs (referencias con copyright; las figuras del paper se versiona por extensión específica)
+*.pdf
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+*.swp

@@ -1,0 +1,9 @@
+profile_h,n_runs,n_models,n_runtimes,n_accelerators,n_cpu_arch
+H3_CPU_HIGH,440,44,1,161,4
+H5_GPU_MED,440,38,1,80,2
+H6_GPU_HIGH,375,49,1,45,2
+H2_CPU_MED,129,22,1,55,3
+H4_GPU_LOW,70,23,1,19,2
+H1_CPU_LOW,51,8,1,22,3
+H7_SERVER,45,3,1,16,1
+H0_CPU_EDGE,6,1,1,6,2

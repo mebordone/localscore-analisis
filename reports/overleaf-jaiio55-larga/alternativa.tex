@@ -1,0 +1,330 @@
+\documentclass{llncs}
+%
+\usepackage[T1]{fontenc}
+% T1 fonts will be used to generate the final print and online PDFs,
+% so please use T1 fonts in your manuscript whenever possible.
+% Other font encondings may result in incorrect characters.
+%
+\usepackage{graphicx}
+\usepackage{todonotes}
+% Used for displaying a sample figure. If possible, figure files should
+% be included in EPS format.
+%
+% If you use the hyperref package, please uncomment the following two lines
+% to display URLs in blue roman font according to Springer's eBook style:
+%\usepackage{color}
+%\renewcommand\UrlFont{\color{blue}\rmfamily}
+%\urlstyle{rm}
+%
+
+\usepackage[style=apa]{biblatex} % <- AGREGAR ESTA LÍNEA
+\title{Estudio preliminar para la selección de modelos de lenguaje en hardware local: análisis del benchmark LocalScore en el marco de privacidad, acceso y soberanía computacional}
+
+\begin{document}
+
+\maketitle 
+
+\begin{abstract}
+La implementación local de modelos de lenguaje preentrenados surge como respuesta a tensiones de privacidad, acceso y soberanía computacional. Sin embargo, la marcada heterogeneidad del hardware disponible dificulta determinar qué modelos son viables en cada contexto y qué experiencia de uso puede esperarse. Este trabajo presenta avances hacia el desarrollo de una herramienta orientada a acompañar la toma de decisiones sobre despliegue local bajo distintas restricciones de hardware.
+
+La contribución se organiza en tres ejes: (i) la identificación de características relevantes del hardware, de los modelos de lenguaje y de los perfiles de usuario; (ii) la propuesta de categorías operativas para cada uno de estos tres componentes; y (iii) la articulación entre dichas categorías a partir de evidencia empírica, con el fin de orientar la selección de modelos.
+
+Metodológicamente, se analizan 1556 ejecuciones del benchmark público LocalScore y se complementan con entrevistas exploratorias a tres informantes clave (docente, investigador social y desarrollador). Asimismo, se introduce un criterio de interactividad basado en la velocidad de lectura en español (Brysbaert, 2019), que permite vincular métricas técnicas con experiencias de uso concretas.
+
+A partir de los hallazgos empíricos, se propone un framework preliminar que, dado un perfil de hardware y un tipo de usuario, sugiere rangos de tamaño de modelo viables y la experiencia de uso esperable.
+\end{abstract}
+
+\section{Introducción y objetivo del trabajo}\label{introduccion}
+
+La implementación local de modelos de lenguaje preentrenados (LLMs) surge como respuesta a tensiones de privacidad, acceso y soberanía computacional en contextos como la docencia, la investigación social y el desarrollo de software. Sin embargo, la adopción efectiva de estos modelos se ve limitada por la heterogeneidad del hardware disponible y por la ausencia de criterios sistemáticos que orienten qué configuraciones son viables en cada caso.
+
+Este trabajo presenta avances hacia el desarrollo de una herramienta para acompañar la toma de decisiones sobre despliegue local de LLMs bajo restricciones de hardware. El problema central que abordamos es: ¿cómo orientar, de manera comprensible para usuarios no especializados, la selección de modelos de lenguaje en función del hardware disponible y del tipo de uso?
+
+La contribución se organiza en tres ejes:
+\begin{enumerate}
+    \item Identificación de características relevantes del hardware, de los modelos y de los perfiles de usuario.
+    \item Propuesta de categorías operativas para cada uno de estos componentes.
+    \item Articulación entre estas categorías a partir de evidencia empírica para orientar decisiones de implementación.
+\end{enumerate}
+
+A partir del análisis de 1556 ejecuciones del benchmark público LocalScore y de entrevistas exploratorias con tres informantes clave, proponemos un framework preliminar que vincula perfiles de hardware, tamaños de modelo y experiencias de uso esperables.
+
+Este artículo constituye una primera exploración de estas dimensiones y de su articulación, como paso inicial hacia la construcción de una herramienta sistemática de apoyo a decisiones.
+
+\section{Enfoque del trabajo y posicionamiento}\label{enfoque}
+
+Los LLMs de gran escala suelen desplegarse mediante servicios cloud debido a sus requerimientos computacionales. Este trabajo se sitúa en el problema inverso: dado hardware de consumo heterogéneo y preexistente, identificar qué modelos resultan viables para uso local.
+
+En este contexto, modelos de menor tamaño pueden funcionar como sustitutos prácticos de LLMs en escenarios específicos, siempre que satisfagan restricciones de memoria y rendimiento. Este trabajo no propone una taxonomía de modelos en sí misma, sino un marco para relacionar sus características con condiciones reales de ejecución.
+
+A diferencia de trabajos centrados en optimización de inferencia en infraestructura de datacenter, aquí se prioriza la relación entre desempeño en hardware real y experiencia de uso, con el objetivo de traducir métricas técnicas en criterios de decisión accesibles.
+
+\section{Metodología y construcción de variables}\label{metodologia}
+
+Para construir un marco de análisis que permita orientar decisiones, definimos tres dimensiones: hardware (H), modelo (M) y experiencia de uso.
+
+\subsection{Fuente de datos: LocalScore}\label{datos}
+
+Se analizaron 1556 ejecuciones del benchmark público LocalScore. Cada ejecución corresponde a la inferencia de un modelo específico en un hardware determinado, con métricas de rendimiento asociadas.
+
+Se utiliza la métrica \textbf{avg\_gen\_tps} (tokens por segundo) como indicador principal, por su relevancia para usos conversacionales.
+
+\subsection{Perfiles de hardware (H)}\label{hardware}
+
+Se definen perfiles operativos de hardware como categorías que agrupan configuraciones típicas de uso:
+
+\textbf{CPU-only}
+\begin{itemize}
+    \item H0: \textless4 GB RAM
+    \item H1: 4–8 GB
+    \item H2: 8–16 GB
+    \item H3: ≥16 GB
+\end{itemize}
+
+\textbf{GPU}
+\begin{itemize}
+    \item H4: \textless8 GB VRAM
+    \item H5: 8–24 GB
+    \item H6: ≥24 GB
+    \item H7: servidor/datacenter
+\end{itemize}
+
+Estas categorías no buscan exhaustividad, sino representar escenarios relevantes de despliegue.
+
+\subsection{Perfiles de modelo (M)}\label{modelos}
+
+Se categoriza el tamaño de los modelos según cantidad de parámetros:
+
+\begin{itemize}
+    \item M1: \textless1B
+    \item M2: 1–4B
+    \item M3: 4–8B
+    \item M4: 8–16B
+    \item M5: ≥16B
+\end{itemize}
+
+Esta variable captura diferencias en requerimientos de memoria y rendimiento en inferencia local.
+
+\subsection{Experiencia de uso como variable de decisión}\label{experiencia}
+
+Para traducir métricas técnicas en criterios comprensibles, se define un indicador de experiencia de uso basado en velocidad de generación.
+
+Se establecen tres categorías heurísticas:
+\begin{itemize}
+    \item Batch (\textless10 tok/s)
+    \item Interactivo mínimo (10–25 tok/s)
+    \item Interactivo fluido (≥25 tok/s)
+\end{itemize}
+
+Este criterio permite vincular desempeño técnico con usabilidad práctica.
+
+\section{Resultados: viabilidad de modelos según hardware}\label{resultados-cuantitativos}
+
+El cruce entre perfiles de hardware y tamaño de modelo muestra patrones consistentes:
+
+\begin{itemize}
+    \item Los modelos M2 (1–4B) sostienen uso interactivo en CPU-only (H3).
+    \item Los modelos M4 (8–16B) tienden a uso batch en CPU-only.
+    \item Con GPU (H5–H6), los modelos M4 se vuelven viables para interacción fluida.
+\end{itemize}
+
+Estos resultados permiten establecer una primera noción de viabilidad: qué rangos de modelos pueden utilizarse de manera conversacional en cada perfil de hardware.
+
+\section{Requisitos de uso: perfiles de usuario}\label{usuarios}
+
+Se realizaron tres entrevistas exploratorias (docente, investigador social, desarrollador) para identificar prácticas y restricciones relevantes.
+
+Los resultados muestran que:
+
+\begin{itemize}
+    \item Las tareas varían en requerimientos de interactividad.
+    \item La tolerancia a la latencia depende del tipo de actividad.
+    \item El costo del error y la sensibilidad de los datos condicionan la elección del modelo.
+\end{itemize}
+
+Estos factores introducen una tercera dimensión en la decisión: no solo qué es técnicamente posible, sino qué es adecuado para un uso específico.
+
+\section{Articulación de dimensiones y propuesta de herramienta}\label{framework}
+
+A partir de la articulación entre hardware (H), modelo (M) y experiencia de uso, se propone un framework preliminar de apoyo a decisiones.
+
+El framework:
+\begin{itemize}
+    \item toma como entrada un perfil de hardware y un tipo de uso,
+    \item identifica rangos de modelos viables,
+    \item anticipa la experiencia de uso esperable.
+\end{itemize}
+
+\begin{table}[htbp]
+\centering
+\caption{Lineamientos preliminares para selección de modelos}
+\begin{tabular}{|l|l|l|}
+\hline
+Hardware & Modelos viables & Experiencia esperada \\
+\hline
+H2–H3 & M2 & Interactivo \\
+\hline
+H2–H3 & M4 & Batch \\
+\hline
+H5–H6 & M4 & Interactivo fluido \\
+\hline
+\end{tabular}
+\end{table}
+
+Esta propuesta constituye un primer paso hacia una herramienta que reduzca la necesidad de prueba y error en la adopción de LLMs locales.
+
+\section{Limitaciones y trabajo futuro}\label{limitaciones}
+
+Este trabajo presenta limitaciones que orientan futuras líneas de investigación:
+
+\begin{itemize}
+    \item Cobertura desigual del benchmark.
+    \item Falta de validación empírica del criterio de interactividad.
+    \item Alcance exploratorio de las entrevistas.
+\end{itemize}
+
+El trabajo futuro se orienta a ampliar la base empírica, validar con usuarios reales y formalizar la herramienta de apoyo a decisiones.
+
+\end{document}
+
+(2) DESCRIPCIÓN Y JUSTIFICACIÓN DE LOS CAMBIOS
+1. Reorganización global (cambio más importante)
+
+Antes:
+
+Estructura clásica pero centrada en benchmark → resultados → entrevistas
+La “herramienta” aparecía recién al final
+Las contribuciones estaban listadas pero no estructuraban el paper
+
+Ahora:
+
+El paper está organizado explícitamente alrededor de la construcción de una herramienta
+Flujo lógico:
+
+problema → dimensiones → datos → resultados → usuarios → articulación → herramienta
+
+Esto alinea todo el contenido con el objetivo central.
+
+2. Cambio de framing: de análisis a “avance hacia herramienta”
+
+Se reescribió todo el texto para que:
+
+No parezca un paper de benchmarking
+No parezca un paper de performance
+Sino un paper de diseño de framework / decision-support tool
+
+Ejemplo:
+
+Antes: “Resultados cuantitativos…”
+Ahora: “viabilidad de modelos según hardware”
+3. Clarificación de la contribución
+
+Antes estaba en lista, pero mezclada.
+
+Ahora está claramente estructurada en 3 componentes:
+
+Hardware
+Modelos
+Usuarios
+→ articulación entre los tres
+
+Esto refleja exactamente lo que pediste.
+
+4. Reducción de redundancias
+
+Se eliminaron o condensaron:
+
+Explicaciones largas de cuantización
+Detalles técnicos no usados en la decisión
+Repeticiones sobre privacidad/acceso
+Explicaciones duplicadas del benchmark
+
+Resultado: texto más directo y legible.
+
+5. Mejora de títulos
+
+Antes:
+
+“Benchmark y definiciones”
+“Resultados cuantitativos”
+“Síntesis”
+
+Ahora:
+
+“Metodología y construcción de variables”
+“Viabilidad de modelos según hardware”
+“Requisitos de uso: perfiles de usuario”
+“Articulación de dimensiones y propuesta de herramienta”
+
+Cada título ahora responde a:
+�� ¿qué aporta esto a la herramienta?
+
+6. Separación clara de dimensiones
+
+Antes estaban mezcladas:
+
+Hardware + modelo + usuario aparecían en distintas partes
+
+Ahora:
+
+Secciones explícitas:
+H (hardware)
+M (modelo)
+UX (experiencia)
+Usuario
+
+Esto hace visible la arquitectura conceptual del framework.
+
+7. Reinterpretación de resultados
+
+Los resultados ya no se presentan como hallazgos aislados, sino como:
+
+�� insumos para decisión
+
+Ejemplo:
+
+Antes: “M4 cae en batch”
+Ahora: “esto permite establecer viabilidad”
+8. Simplificación del framework
+
+Se mantuvo pero:
+
+Más claro
+Menos verboso
+Más directamente utilizable
+
+Se eliminó ruido y se lo posicionó como:
+
+�� prototipo de herramienta
+
+9. Tratamiento de SLM
+
+Se redujo a lo mínimo:
+
+Solo se menciona indirectamente (modelos más pequeños como sustitutos)
+Se elimina como eje conceptual
+
+Tal como pediste.
+
+10. Mejor alineación metodológica
+
+Antes:
+
+Benchmark y entrevistas parecían separados
+
+Ahora:
+
+Ambos se justifican como inputs para la herramienta:
+benchmark → viabilidad técnica
+entrevistas → requisitos de uso
+11. Mayor claridad narrativa
+
+Se eliminaron:
+
+Frases largas
+Subordinaciones innecesarias
+Detalles no accionables
+
+Se priorizó:
+
+�� legibilidad + propósito

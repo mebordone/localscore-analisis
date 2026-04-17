@@ -56,7 +56,7 @@
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\usepackage[spanish]{babel}
 \usepackage{mathptmx}
 \usepackage{geometry}
 \usepackage{setspace}
@@ -91,12 +91,18 @@
 \begin{document}
 
 \hypertarget{preliminary-study-for-selecting-language-models-on-local-hardware-analysis-of-the-localscore-benchmark-in-the-context-of-privacy-access-and-computational-sovereignty.}{%
-\section{Preliminary study for selecting language models on local
-hardware: analysis of the LocalScore benchmark in the context of
-privacy, access, and computational
-sovereignty.}\label{preliminary-study-for-selecting-language-models-on-local-hardware-analysis-of-the-localscore-benchmark-in-the-context-of-privacy-access-and-computational-sovereignty.}}
+\section{Local deployment of language models on heterogeneous hardware:
+a decision-support framework based on hardware profiles,
+interactivity, and user
+practices}\label{preliminary-study-for-selecting-language-models-on-local-hardware-analysis-of-the-localscore-benchmark-in-the-context-of-privacy-access-and-computational-sovereignty.}}
 
-Local execution of language models addresses persistent concerns around privacy, access, and computational sovereignty, but hardware heterogeneity makes it difficult to know which models are viable in each context. This paper analyzes 1,556 runs from the public LocalScore benchmark, complemented by exploratory interviews with three key informants (teacher, social science researcher, developer), with the aim of guiding model selection for local deployment. We define operational profiles for hardware (H) and model size (M), and propose an interactivity criterion anchored in the average silent reading speed in Spanish (Brysbaert, 2019). Results show that in CPU-only configurations, 1--4B models (M2) sustain conversational use, while 8--16B models (M4) fall predominantly into batch mode; with mid-to-high-end GPU, M4 becomes viable for fluid interaction. The central contribution is that the hardware profile × model size cross allows predicting the expected usage experience before downloading a model — reducing adoption friction without requiring specialized technical knowledge.
+Local deployment of pretrained language models responds to tensions around privacy, access, and computational sovereignty. However, pronounced hardware heterogeneity makes it difficult to determine which models are viable in each context and what user experience can be expected. This paper reports progress toward a decision-support tool for local deployment under diverse hardware constraints.
+
+The contribution is organized in three strands: (i) identifying relevant characteristics of hardware, language models, and user profiles; (ii) proposing operational categories for each of these components; and (iii) articulating these categories using empirical evidence to guide model selection.
+
+Methodologically, we analyze 1,556 runs from the public LocalScore benchmark and complement them with exploratory interviews with three key informants (teacher, social science researcher, developer). We introduce an interactivity criterion based on silent reading speed in Spanish (Brysbaert, 2019), linking technical metrics to concrete usage experiences. In our sample, CPU-only configurations sustain conversational use for 1--4B models (M2), while 8--16B models (M4) fall predominantly into batch mode; with mid-to-high-end GPUs, M4 becomes viable for fluid interaction.
+
+Building on these findings, we propose a preliminary framework that, given a hardware profile and a user or practice type, suggests viable model size ranges and the expected usage experience, reducing adoption friction without requiring specialized technical knowledge.
 
 \textbf{Keywords:} language models, local inference,
 resource-constrained hardware, computational sovereignty, benchmark.
@@ -104,12 +110,18 @@ resource-constrained hardware, computational sovereignty, benchmark.
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{estudio-preliminar-para-la-selecciuxf3n-de-modelos-de-lenguaje-en-hardware-local-anuxe1lisis-del-benchmark-localscore-en-el-marco-de-privacidad-acceso-y-soberanuxeda-computacional.}{%
-\section{Estudio preliminar para la selección de modelos de lenguaje en
-hardware local: análisis del benchmark LocalScore en el marco de
-privacidad, acceso y soberanía
-computacional.}\label{estudio-preliminar-para-la-selecciuxf3n-de-modelos-de-lenguaje-en-hardware-local-anuxe1lisis-del-benchmark-localscore-en-el-marco-de-privacidad-acceso-y-soberanuxeda-computacional.}}
+\section{Despliegue local de modelos de lenguaje en hardware heterogéneo:
+un marco de apoyo a la decisión basado en perfiles de hardware,
+interactividad y prácticas de
+usuario}\label{estudio-preliminar-para-la-selecciuxf3n-de-modelos-de-lenguaje-en-hardware-local-anuxe1lisis-del-benchmark-localscore-en-el-marco-de-privacidad-acceso-y-soberanuxeda-computacional.}}
 
-La ejecución local de modelos de lenguaje se presenta como respuesta a tensiones de privacidad, acceso y soberanía computacional, pero la heterogeneidad del hardware disponible dificulta saber qué modelos son viables en cada contexto. Este trabajo analiza 1556 ejecuciones del benchmark público LocalScore y las complementa con entrevistas exploratorias a tres informantes clave (docente, investigador social, desarrollador), con el objetivo de orientar la selección de modelos para despliegue local. Definimos perfiles operativos de hardware (H) y de tamaño de modelo (M), y proponemos un criterio de interactividad anclado en la velocidad de lectura en español (Brysbaert, 2019). Los resultados muestran que, en configuraciones CPU-only, los modelos de 1--4B (M2) sostienen uso conversacional, mientras que los de 8--16B (M4) caen predominantemente en modo batch; con GPU media/alta, M4 se vuelve viable para interacción fluida. La contribución central es que el cruce perfil de hardware × tamaño de modelo permite predecir el régimen de experiencia de uso antes de descargar un modelo — reduciendo la fricción de adopción sin requerir conocimiento técnico especializado.
+La implementación local de modelos de lenguaje preentrenados surge como respuesta a tensiones de privacidad, acceso y soberanía computacional. Sin embargo, la marcada heterogeneidad del hardware disponible dificulta determinar qué modelos son viables en cada contexto y qué experiencia de uso puede esperarse. Este trabajo presenta avances hacia el desarrollo de una herramienta orientada a acompañar la toma de decisiones sobre despliegue local bajo distintas restricciones de hardware.
+
+La contribución se organiza en tres ejes: (i) la identificación de características relevantes del hardware, de los modelos de lenguaje y de los perfiles de usuario; (ii) la propuesta de categorías operativas para cada uno de estos tres componentes; y (iii) la articulación entre dichas categorías a partir de evidencia empírica, con el fin de orientar la selección de modelos.
+
+Metodológicamente, se analizan 1556 ejecuciones del benchmark público LocalScore y se complementan con entrevistas exploratorias a tres informantes clave (docente, investigador social y desarrollador). Asimismo, se introduce un criterio de interactividad basado en la velocidad de lectura en español (Brysbaert, 2019), que permite vincular métricas técnicas con experiencias de uso concretas. En la muestra, en configuraciones CPU-only los modelos de 1--4B (M2) sostienen uso conversacional, mientras que los de 8--16B (M4) caen predominantemente en modo batch; con GPU media/alta, M4 se vuelve viable para interacción fluida.
+
+A partir de los hallazgos empíricos, se propone un framework preliminar que, dado un perfil de hardware y un tipo de usuario o práctica, sugiere rangos de tamaño de modelo viables y la experiencia de uso esperable, reduciendo la fricción de adopción sin exigir conocimiento técnico especializado.
 
 \textbf{Palabras clave:} modelos de lenguaje, inferencia local, hardware
 de recursos limitados, soberanía computacional, benchmark.
@@ -127,9 +139,7 @@ Un modelo de lenguaje (LM) es un sistema entrenado para modelar y generar texto.
     \item Soberanía computacional: universidades, sistemas educativos y empresas que adoptan servicios cloud de IA delegan el control sobre su infraestructura, sus datos y los modelos que utilizan, sin posibilidad real de auditoría ni autonomía operativa.
 \end{itemize}
 
-La ejecución local de SLMs se presenta como una respuesta concreta a estas tres tensiones. Sin embargo, incluso cuando existen modelos abiertos disponibles, su adopción efectiva se ve condicionada de forma determinante por capacidades de hardware heterogéneas y por la falta de guía sistemática para orientar esa adopción.
-
-La pregunta que motiva este trabajo es: ¿qué modelos y configuraciones resultan adecuados para un perfil de hardware dado y un tipo de uso específico?
+La ejecución local de LLMs se presenta como una respuesta concreta a estas tres tensiones. Sin embargo, incluso cuando existen modelos abiertos disponibles, su adopción efectiva se ve condicionada de forma determinante por capacidades de hardware heterogéneas y por la falta de guía sistemática para orientar esa adopción. Este trabajo avanza en la construcción de un framework de selección de modelos para despliegue local, orientado por la pregunta: ¿qué modelos y configuraciones resultan adecuados para un perfil de hardware dado y un tipo de uso específico?
 
 Este artículo presenta avances preliminares de una investigación doctoral sobre despliegue de LLMs en hardware limitado. A partir del análisis de 1556 ejecuciones del benchmark público LocalScore y de entrevistas exploratorias con tres informantes clave, realizamos cuatro contribuciones:
 
@@ -137,65 +147,44 @@ Este artículo presenta avances preliminares de una investigación doctoral sobr
     \item Perfiles de hardware (H): una tipificación operativa de clases de equipo que permite a usuarios no especializados caracterizar su hardware en relación con el uso de LLMs.
     \item Perfiles de modelo (M): una segmentación por tamaño de parámetros que discrimina demanda de memoria y throughput en inferencia local.
     \item Criterio de interactividad: una categorización de experiencia de uso (batch, interactivo mínimo, interactivo fluido) anclada en la velocidad de lectura promedio en español (Brysbaert, 2019), que permite predecir si una configuración H×M va a ser usable de forma conversacional antes de descargar el modelo.
-    \item Cruce H×M×práctica: un análisis que conecta los resultados del benchmark con prácticas y trade-offs concretos de tres grupos de usuarios, como base empírica para un futuro framework de recomendación.
+    \item Framework preliminar de selección: una síntesis de los resultados cuantitativos y cualitativos en lineamientos operativos que, dado un perfil de hardware, indican qué rangos de modelo son viables y qué experiencia de uso esperar (Tabla 1).
 \end{enumerate}
 
-El resto del artículo presenta trabajos relacionados (§2), datos y método (§3), resultados cuantitativos (§4) y cualitativos (§5), una síntesis preliminar (§6) y limitaciones (§7).
+El resto del artículo se organiza en seis secciones. §2 contextualiza los SLMs y las técnicas de optimización, e identifica el vacío de estudios sistemáticos para hardware de consumo. §3 construye las variables del marco (fuente LocalScore; perfiles H y M; criterio de experiencia/interactividad como puente entre métricas y uso). §4 caracteriza la viabilidad técnica en la muestra mediante el cruce H×M×régimen de experiencia sobre 1556 corridas. §5 aporta requisitos de uso a partir de tres entrevistas y su traducción a demandas sobre H×M. §6 articula dimensiones en lineamientos y tabla del marco preliminar. §7 identifica las limitaciones y los próximos pasos.
 
 \hypertarget{trabajos-relacionados}{%
 \subsection{2. Trabajos relacionados}\label{trabajos-relacionados}}
 
-Los LLMs de gran escala suelen requerir uso vía cloud/API por su demanda
-computacional: por ejemplo, Llama 3.1 405B requiere aproximadamente
-202,5 GB de memoria GPU en precisión int4 (Wang et al., 2025). Este
-modelo de despliegue plantea problemas de privacidad ---los usuarios
-deben enviar sus datos a terceros---, latencia inaceptable para
-aplicaciones en tiempo real y costos elevados de fine-tuning (Wang et
-al., 2025). Como alternativa, se define a los SLMs no solo por cantidad
-de parámetros, sino por su capacidad de ejecutar tareas especializadas
-dentro de restricciones de recursos: el límite inferior es el tamaño
-mínimo que exhibe habilidades emergentes para una tarea, y el superior
-es el máximo manejable bajo las condiciones de hardware disponibles
-(Wang et al., 2025).
+Los LLMs de gran escala suelen requerir uso vía cloud/API por su demanda computacional: por ejemplo, Llama 3.1 405B requiere aproximadamente 202,5 GB de memoria GPU en precisión int4 (Wang et al., 2025). Este modelo de despliegue plantea los problemas de privacidad, acceso y soberanía descritos en §1. Como alternativa, los SLMs se definen no solo por cantidad de parámetros, sino por su capacidad de ejecutar tareas especializadas dentro de restricciones de recursos: el límite inferior es el tamaño mínimo que exhibe habilidades emergentes para una tarea, y el superior es el máximo manejable bajo las condiciones de hardware disponibles (Wang et al., 2025). Este trabajo opera en ese espacio: analiza modelos de distintos tamaños ejecutados en hardware de consumo heterogéneo, y busca identificar qué combinaciones resultan viables para uso conversacional — es decir, qué modelos pueden funcionar efectivamente como SLMs en contextos de despliegue local real.
 
-Trabajos como Pope et al. (2022) desarrollan modelos analíticos para optimizar inferencia de LLMs a escala de datacenter — modelos de 8B a 540B parámetros en TPUs especializadas. Este trabajo aborda el problema inverso: dado hardware de consumo heterogéneo y preexistente, ¿qué modelos resultan viables para uso conversacional?
+Los trabajos existentes sobre desempeño de LLMs, como Pope et al. (2022), desarrollan modelos analíticos para optimizar inferencias a escala de datacenter — modelos de 8B a 540B parámetros en hardware especializado. Este trabajo aborda el problema inverso: dado hardware de consumo heterogéneo y preexistente, ¿qué modelos resultan viables para uso conversacional?
 
-Complementariamente, se estudian técnicas para acelerar inferencia en
-edge mediante arquitecturas mixture-of-experts (Yi et al., 2023). En
-pipelines con recuperación aumentada (RAG), la cuantización puede
-afectar desempeño y comportamiento incluso en modelos pequeños (Yazan et
-al., 2024). En este sentido, la evidencia reciente indica que la
-cuantización a 3--4 bits constituye un balance práctico entre
-compresión, eficiencia de inferencia y precisión para despliegue en
-entornos con recursos limitados (Wang et al., 2025).
+En cuanto a técnicas de optimización, la cuantización permite reducir el tamaño de los modelos con impacto limitado en precisión; la evidencia reciente indica que 3-4 bits constituye un balance práctico para despliegue en entornos con recursos limitados (Wang et al., 2025), y este rango domina la muestra analizada: el 87\% de las ejecuciones corresponde a Q4\_K\_Medium. Esto implica que los patrones del cruce H×M reflejan principalmente diferencias por tamaño de modelo y perfil de hardware, no por cuantización — incorporar esa dimensión requiere mayor diversidad en la base y queda como trabajo futuro. Otras técnicas como mixture-of-experts (MoE) aceleran el cómputo pero no reducen los requerimientos de memoria para cargar el modelo (Yi et al., 2023), por lo que su impacto en hardware de consumo es más limitado y no están representadas en la muestra actual.
 
-Sin embargo, estos trabajos abordan técnicas y taxonomías de modelos
-pero no cruzan datos de benchmark real de hardware con necesidades de
-uso concretas. Este trabajo aporta ese cruce empírico: utiliza el
-benchmark público LocalScore como fuente de datos observacionales sobre
-rendimiento en hardware específico y lo complementa con evidencia
-cualitativa sobre prácticas y trade-offs de usuarios.
+Sin embargo, estos trabajos abordan técnicas y taxonomías de modelos sin cruzar datos de rendimiento en hardware real con necesidades de uso concretas. Este trabajo aporta ese cruce: a partir de 1556 ejecuciones reales de LocalScore, introduce un criterio de interactividad anclado en la velocidad de lectura en español (Brysbaert, 2019) para traducir tokens/segundo en experiencia de usuario percibida.
 
-\hypertarget{datos-y-muxe9todo}{%
-\subsection{3. Datos y método}\label{datos-y-muxe9todo}}
+\hypertarget{benchmark-y-definiciones}{%
+\subsection{3. Metodología: construcción de variables (H, M, experiencia)}\label{benchmark-y-definiciones}}
+
+Las variables que siguen son las del marco preliminar de selección: hacen comparables las corridas del benchmark y permiten expresar decisiones en términos comprensibles para usuarios sin formación técnica especializada. Esta sección define la fuente de datos (LocalScore), los perfiles operativos de hardware (H) y modelo (M), y un criterio de experiencia de uso (batch, interactivo mínimo, interactivo fluido) que funciona como lenguaje común entre la dimensión técnica y la práctica del usuario.
 
 \hypertarget{localscore-como-benchmark-y-fuente-de-datos}{%
-\subsubsection{3.1 LocalScore como benchmark y fuente de
-datos}\label{localscore-como-benchmark-y-fuente-de-datos}}
+\subsubsection{3.1 Fuente de datos: LocalScore}\label{localscore-como-benchmark-y-fuente-de-datos}}
 
 LocalScore es una herramienta open source de benchmarking orientada a
 medir rendimiento de inferencia de modelos de lenguaje sobre hardware
 específico y publicar resultados en una base pública de corridas para
 comparación entre equipos (Mozilla AI, s.f.). Mide tres métricas
-principales: avg\_prompt\_tps: velocidad de procesamiento de prompts en
-token/segundo, avg\_gen\_tps: velocidad promedio de generación en
-tokens/segundo y\\
-avg\_ttft\_ms: tiempo promedio entre el envío y la respuesta del primer
-token. 
+principales: 
+\begin{itemize}
+    \item avg\_prompt\_tps: velocidad de procesamiento de prompts en token/segundo,
+    \item avg\_gen\_tps: velocidad promedio de generación en tokens/segundo
+    \item avg\_ttft\_ms: tiempo promedio entre el envío y la respuesta del primer token.
+\end{itemize}
 
 Estas métricas corresponden a las fases de prefill (procesamiento de tokens de entrada) y decode (generación autoregresiva de tokens de salida) descritas en Pope et al. (2022) para inferencia de Transformers, aquí medidas sobre hardware de consumo heterogéneo mediante LocalScore en lugar de aceleradores de datacenter.
 
-En este trabajo usamos la ejecución como unidad de análisis,
+En este trabajo usamos cada ejecución de este benchmark como unidad de análisis,
 comprendida como la ejecución del benchmark en un hardware particular,
 con un modelo específico dando un resultado de métrica. Para analizar el
 rendimiento con hardware y modelo utilizamos avg\_gen\_tps, relevante
@@ -203,7 +192,7 @@ para prácticas conversacionales donde la velocidad de respuesta puede
 cortar el flujo.
 
 Los datos corresponden a un dump público de LocalScore tomado el
-09-24-2025 constando de 1556 ejecuciones del benchmark.
+24-09-2025 constando de 1556 ejecuciones del benchmark.
 
 \hypertarget{perfiles-de-hardware-h}{%
 \subsubsection{3.2 Perfiles de hardware
@@ -212,15 +201,23 @@ Los datos corresponden a un dump público de LocalScore tomado el
 Los perfiles de hardware son una tipificación operativa de
 \textbf{clases de equipo} para uso local de LLM (RAM en \textbf{solo
 CPU} y VRAM en \textbf{GPU}, más H7 para señalar
-\textbf{servidor/datacenter}) Reglas: \textbf{solo CPU} --- H0: RAM
-\textless4 GB; H1: {[}4, 8) GB; H2: {[}8, 16) GB; H3: ≥16 GB.
-\textbf{GPU} --- H4: VRAM \textless8 GB; H5: {[}8, 24) GB; H6: VRAM ≥24
-GB; H7: \textbf{acelerador/datacenter} --- identificado como servidor en
-el dump (independiente de los cortes anteriores). Se sostiene H0 como
-perfil de interés por los objetivos del estudio aunque en la muestra
-contiene solo 6 ejecuciones. Los perfiles no pretenden censar población
-ni capturar todo el hardware, sino caracterizar escenarios de despliegue
-local relevantes para el estudio.
+\textbf{servidor/datacenter}) Definimos los siguientes perfiles: 
+\textbf{solo CPU} --- 
+\begin{itemize}
+    \item H0: RAM \textless4 GB;
+    \item H1: {[}4, 8) GB;
+    \item H2: {[}8, 16) GB;
+    \item H3: ≥16 GB.
+\end{itemize}
+\textbf{GPU} --- 
+\begin{itemize}
+    \item H4: VRAM \textless8 GB;
+    \item H5: {[}8, 24) GB;
+    \item H6: VRAM ≥24 GB;
+    \item H7: \textbf{acelerador/datacenter} --- identificado como servidor en el dump (independiente de los cortes anteriores).
+\end{itemize}
+Se sostiene H0 como perfil de interés por los objetivos del estudio aunque la muestra
+contiene solo 6 ejecuciones. Los perfiles no pretenden censar población ni capturar todo el hardware, sino caracterizar escenarios de despliegue local relevantes para el estudio.
 
 \hypertarget{perfiles-de-modelo-m}{%
 \subsubsection{3.3 Perfiles de modelo (M)}\label{perfiles-de-modelo-m}}
@@ -245,8 +242,7 @@ uso)}\label{categoruxedas-de-performance-experiencia-de-uso}}
 Para aproximar si una corrida se comporta como interactiva o como batch,
 usamos avg\_gen\_tps como proxy de la velocidad a la que el usuario
 recibe texto en streaming. Según Brysbaert (2019), la velocidad promedio
-de lectura silenciosa es de 278 palabras por minuto (ppm). Dado que en
-español un token equivale aproximadamente a 1,7 caracteres, podemos
+de lectura silenciosa en español es de 278 palabras por minuto (ppm). Dado que en ese idioma la relación es de aproximadamente 1,7 tokens por palabra, podemos
 estimar ppm ≈ (tps / 1,7) × 60; así, 10 tok/s corresponde a
 \textasciitilde350 ppm, valor que ya supera la velocidad de lectura
 promedio. 
@@ -261,9 +257,10 @@ sustituyen otras dimensiones relevantes (p.~ej. latencia inicial/TTFT,
 tipo de tarea o calidad de salida), que planeamos incorporar en trabajo
 futuro.
 
-\hypertarget{resultados-cuantitativos-benchmark}{%
-\subsection{4. Resultados cuantitativos
-(benchmark)}\label{resultados-cuantitativos-benchmark}}
+\hypertarget{resultados-cuantitativos}{%
+\subsection{4. Viabilidad técnica según H×M (evidencia LocalScore)}\label{resultados-cuantitativos}}
+
+Esta sección aporta \textbf{insumos de viabilidad técnica} al marco preliminar: sobre la base de LocalScore, caracteriza qué combinaciones H×M resultan plausibles en la muestra en términos de régimen de generación (batch/interactivo), según las definiciones de §3. A continuación se aplican esas definiciones a las 1556 corridas del benchmark. Primero se describe la distribución de la muestra por perfil de hardware y modelo, y luego se presenta el cruce H×M×régimen de experiencia que constituye la base empírica del framework.
 
 \hypertarget{distribuciuxf3n-de-hardware-y-modelos}{%
 \subsubsection{4.1 Distribución de hardware y
@@ -282,20 +279,20 @@ performance}\label{cruce-hardware-tamauxf1o-de-modelo-performance}}
 
 Reportamos el cruce H1--H7 (excluyendo H0) para evitar que una celda con
 muy baja cobertura distorsione la lectura agregada. El cruce exhibe dos
-patrones: (i) quiebre en M4 (8B--16B): H3--M4 es 80.9\% batch (148/183),
-mientras que en GPU H5--M4 es 66.4\% fluido (160/241) y H6--M4 67.8\%
-fluido (137/202); (ii) robustez en M2 (1B-- 4B): H3--M2 alcanza 96.0\%
-interactivo total (214/223) y 73.5\% fluido (164/223), y en H5/H6 el
-fluido ronda 94.6\%.
+patrones: 
+\begin{itemize}
+    \item (i) quiebre en M4 (8B--16B): H3--M4 es 80.9\% batch (148/183), mientras que en GPU H5--M4 es 66.4\% fluido (160/241) y H6--M4 67.8\% fluido (137/202);
+    \item (ii) robustez en M2 (1B-- 4B): H3--M2 alcanza 96.0\% interactivo total (214/223) y 73.5\% fluido (164/223), y en H5/H6 el fluido ronda 94.6\%.
+\end{itemize}
 
-\textbf{Takeaway:} estos resultados permiten que el framework tome una
+\textbf{Resultado clave:} estos resultados permiten que el framework tome una
 primera decisión ``de viabilidad'' por perfil de hardware: qué rangos de
 tamaño (M) pueden aspirar a modo batch vs.~interactivo.
 
 \begin{figure}
 \centering
 \includegraphics{figures/fig03_hardware_model_perf_percent_clean.png}
-\caption{Figura 1. Hardware × tamaño de modelo × performance (\% por
+\caption{Hardware × tamaño de modelo × performance (\% por
 H×M).}
 \end{figure}
 
@@ -307,15 +304,10 @@ CPU-only con baja interactividad (p.~ej. M4), el cruce sugiere
 considerar despliegue local en GPU/servidor institucional o ajustar a
 tamaños M más pequeños.
 
-\hypertarget{resultados-cualitativos-usuarios-pruxe1cticas-trade-offs}{%
-\subsection{5. Resultados cualitativos (usuarios, prácticas,
-trade-offs)}\label{resultados-cualitativos-usuarios-pruxe1cticas-trade-offs}}
+\hypertarget{resultados-cualitativos}{%
+\subsection{5. Requisitos de uso y perfiles de usuario}\label{resultados-cualitativos}}
 
-Se realizaron entrevistas exploratorias semi-estructuradas
-(anonimizadas) con tres casos: docente, investigador social y
-desarrollador/SRE. Con fines exploratorios prospectivos, para dirigir de
-forma más adecuada los objetivos del trabajo; no se busca generalización
-estadística.
+Esta sección aporta \textbf{insumos de adecuación al uso}: identifica prácticas, restricciones y trade-offs ---en particular, demandas de interactividad, tolerancia a la latencia, costo del error y sensibilidad de los datos--- que condicionan qué configuraciones resultan aceptables más allá de la viabilidad técnica del §4. Se realizaron tres entrevistas exploratorias semi-estructuradas, grabadas, transcriptas y sistematizadas, de aproximadamente una hora cada una. Los casos fueron seleccionados por criterio de pertinencia teórica: cada perfil representa un tipo de práctica con características distintivas en relación al objeto de estudio. Los docentes universitarios trabajan con datos estudiantiles sensibles y materiales pedagógicos que frecuentemente no pueden compartirse con servicios externos. Los investigadores de ciencias sociales producen y analizan grandes volúmenes de datos cualitativos — entrevistas, transcripciones, documentos — que antes requerían técnicas de análisis más limitadas y que hoy son candidatos naturales al procesamiento con LLMs locales. Los desarrolladores y SREs operan con código propietario e infraestructura interna donde la privacidad y la soberanía son requisitos operativos, no preferencias. Los tres perfiles son además informantes clave: tienen conocimiento profundo de las prácticas, herramientas y restricciones de sus respectivos campos. No se busca generalización estadística sino una exploración prospectiva que permita orientar los objetivos del trabajo y anclar el cruce cuantitativo en necesidades de uso reales.
 
 \hypertarget{caso-docente-universidad.}{%
 \subsubsection{5.1 Caso docente
@@ -324,6 +316,7 @@ estadística.
 \textbf{Prácticas prioritarias:} planificación y actualización de
 programas; producción de materiales (Moodle/recursos); consultas FAQ;
 preguntas de autoevaluación; apoyo con bibliografía (RAG).
+\textbf{Hardware del entorno:} laboratorios institucionales con 8 GB RAM sin GPU (H2); dispositivo personal no detallado; la práctica actual depende de servicios cloud.
 \textbf{Trade-offs:} tolera batch para materiales; error/alucinación
 crítico en evaluación; sensibilidad alta a datos estudiantiles.
 
@@ -333,9 +326,10 @@ social.}\label{caso-investigador-social.}}
 
 \textbf{Prácticas:} escritura/revisión; análisis cualitativo con
 trazabilidad; transcripción (Whisper); instrumentos;
-evaluación/revisión. \textbf{Trade-offs:} riesgo crítico de alucinación
-bibliográfica; necesidad de verificación; hardware promedio del campo
-limitado (8 GB RAM, sin GPU), tensionando ejecución local.
+evaluación/revisión.
+\textbf{Hardware del campo:} promedio limitado (8 GB RAM, sin GPU, H2); el informante es outlier con GPU (GTX 1060, 3 GB VRAM, H4).
+\textbf{Trade-offs:} riesgo crítico de alucinación
+bibliográfica; necesidad de verificación; hardware del campo tensiona ejecución local.
 
 \hypertarget{caso-desarrolladorsre.}{%
 \subsubsection{5.3 Caso
@@ -343,6 +337,7 @@ desarrollador/SRE.}\label{caso-desarrolladorsre.}}
 
 \textbf{Prácticas:} migraciones masivas (p.~ej. Ansible); refactors;
 tests; documentación/onboarding; scripting/diagnóstico.
+\textbf{Hardware típico:} notebooks personales heterogéneas (≥16 GB RAM, CPU-only, H3); servidor compartido de la cooperativa con GPU de alta gama (2× RTX 5090, H6).
 \textbf{Trade-offs:} costo de error alto; preferencia por ejecución
 local por privacidad/soberanía; acepta batch para tareas largas con
 verificabilidad.
@@ -376,30 +371,35 @@ benchmark (§4.2).
   CPU-only conviene priorizar M2.
 \end{itemize}
 
-\hypertarget{suxedntesis-cruce-preliminar-hardware-uso---configuraciuxf3n}{%
-\subsection{6. Síntesis: cruce preliminar (hardware × uso -
-configuración)}\label{suxedntesis-cruce-preliminar-hardware-uso---configuraciuxf3n}}
+\hypertarget{sintesis-framework}{%
+\subsection{6. Articulación de dimensiones y propuesta de marco preliminar}\label{sintesis-framework}}
 
-Los resultados cuantitativos y cualitativos convergen en una plantilla
-preliminar de decisión para despliegue local: entrada = perfil de
-hardware (H) + tipo de práctica (interactiva vs.~batch) + sensibilidad
-de datos/costo del error; salida = rango de tamaño de modelo (M) viable
-+ expectativa de experiencia (batch, interactivo mínimo o fluido) +
-advertencias de despliegue. El cruce H×M por régimen de generación
-(§4.2) aporta la base empírica de desempeño, y la evidencia cualitativa
-(§5) modula la recomendación según tolerancia a la espera,
-verificabilidad y riesgo de la tarea.
+Aquí se \textbf{integran} los insumos de viabilidad técnica (§4) y los de adecuación al uso (§5) en lineamientos operativos y en una síntesis tabular del marco preliminar. Los resultados cuantitativos y cualitativos convergen en una primera versión del framework de selección de modelos para despliegue local. El framework toma como entrada el perfil de hardware del usuario (H) y produce como salida el rango de tamaño de modelo (M) viable, el régimen de experiencia esperado y las advertencias de despliegue relevantes. El cruce H×M por régimen de generación (§4.2) aporta la base empírica de desempeño, y la evidencia cualitativa (§5) modula la recomendación según el tipo de práctica, la tolerancia a la espera y el riesgo de la tarea.
 
-Reglas heurísticas iniciales derivadas de la muestra: 
-\begin{itemize}
-    \item CPU-only muy restringido (H0--H1): la viabilidad interactiva se restringe sobre todo a M1 y, con cautela, a M2; en estos perfiles la evidencia es más escasa y requiere validación local.
-    \item CPU-only con RAM moderada/alta (H2--H3): para interactividad, el punto de partida más plausible es M2 (1B--4B); M4 (8B--16B) aparece predominantemente en batch sin aceleración.
-    \item H4 (GPU \textless8 GB): la cobertura en la muestra es insuficiente para formular una regla estable; se reporta como zona de incertidumbre y requiere validación adicional.
-    \item GPU consumer media/alta (H5--H6): es razonable aspirar a M4 para uso interactivo, con mayor frecuencia de regímenes fluidos en la muestra; M5 requiere cautela adicional por demanda de memoria y cobertura heterogénea.
-    \item Servidor/acelerador institucional (H7): la muestra muestra interactividad fluida en todos los tamaños de modelo. Es la alternativa de despliegue organizacional cuando el hardware personal no alcanza, pero introduce una variable nueva: la concurrencia de usuarios, que este trabajo no aborda y queda como dimensión a incorporar en trabajo futuro.
-\end{itemize}
+La Tabla 1 sintetiza los lineamientos del framework derivados de la muestra.
 
-Importante: el régimen técnico interactivo es condición necesaria pero no suficiente. Cuando el costo del error es alto o los datos son sensibles, la recomendación debe complementarse con verificación humana y criterios institucionales de uso.
+\begin{table}[htbp]
+\centering
+\caption{Framework preliminar de selección de modelos según perfil de hardware.}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Perfil H} & \textbf{M recomendado} & \textbf{Régimen esperado} & \textbf{Advertencias} \\
+\hline
+H0--H1 & M1; M2 con cautela & Batch a interactivo mín. & Evidencia escasa \\
+\hline
+H2--H3 & M2 (1--4B) & Interactivo (fluido en H3) & M4 cae en batch sin GPU \\
+\hline
+H4 & M2 (1--4B) & Interactivo fluido & Cobertura insuficiente \\
+\hline
+H5--H6 & Hasta M4 (8--16B) & Interactivo fluido & M5 requiere cautela \\
+\hline
+H7 & Todos & Fluido & Concurrencia no evaluada \\
+\hline
+\end{tabular}
+\label{tab:framework}
+\end{table}
+
+La Tabla 1 indica viabilidad técnica; la recomendación final depende además del tipo de uso. Cuando la tarea exige interactividad (consultas en clase, diagnóstico en vivo), el régimen ``interactivo fluido'' es el mínimo práctico. Cuando tolera espera (producción de materiales, migraciones masivas), regímenes batch son aceptables y permiten considerar modelos de mayor tamaño. En todos los casos, cuando el costo del error es alto o los datos son sensibles, la recomendación debe complementarse con verificación humana y criterios institucionales de uso.
 
 En síntesis: conocer el perfil de hardware permite anticipar qué rangos de modelo son viables para uso conversacional, reduciendo la fricción de adopción sin necesidad de descargar y probar cada configuración.
 
@@ -407,7 +407,13 @@ En síntesis: conocer el perfil de hardware permite anticipar qué rangos de mod
 \subsection{7. Limitaciones y trabajo
 futuro}\label{limitaciones-y-trabajo-futuro}}
 
-La cobertura es desigual: existen celdas H×M con baja muestra y combinaciones sin datos. El perfil H0 es relevante (edge/CPU muy limitado), pero aparece escasamente; se requiere recolección dirigida/experimentos propios. Asimismo, el análisis de H7 no incorpora la dimensión de concurrencia de usuarios, relevante para despliegue institucional. Trabajo futuro: validación con usuarios y refinamiento por práctica (p.~ej. TTFT vs.~tokens/s) y por restricciones institucionales.
+Este trabajo tiene cuatro limitaciones principales que orientan el trabajo futuro.
+\begin{itemize}
+    \item Cobertura desigual del benchmark. La muestra de LocalScore presenta celdas H×M con baja cobertura y combinaciones sin datos, particularmente en los extremos: H0 (CPU muy limitado, n=6) y H4 (GPU \textless8 GB) no permiten formular reglas estables. Esto es relevante porque precisamente esos perfiles son los más frecuentes en contextos educativos y de investigación social en países con menor poder adquisitivo promedio. Se requiere recolección dirigida y experimentos propios para cubrir esas zonas.
+    \item Sesgo de selección en LocalScore. No es posible caracterizar con certeza a los usuarios que ejecutan el benchmark y contribuyen datos. Es razonable asumir que se trata de personas con perfil técnico y hardware superior al promedio, posiblemente concentradas en regiones con mayor poder adquisitivo. Esto implica que las celdas más pobladas de la muestra (H5, H6) pueden sobrerrepresentar configuraciones poco frecuentes en los contextos de despliegue que este trabajo busca orientar. Trabajo futuro incluye una campaña de recolección dirigida a los grupos de interés del estudio, e incorporar la variable de región geográfica al benchmark.
+    \item Criterio de interactividad no validado empíricamente. Los umbrales de 10 y 25 tok/s son puntos de partida operativos derivados teóricamente de la velocidad de lectura en español (Brysbaert, 2019). No han sido validados con usuarios reales: no se midió si efectivamente perciben esos umbrales como límites de comodidad de uso. El criterio cumplió una función metodológica útil — proveer un lenguaje común no técnico para trabajar con los entrevistados — pero requiere validación experimental antes de consolidarse como estándar.
+    \item Alcance de las entrevistas. Los tres casos son informantes clave con conocimiento profundo de sus campos, pero n=3 no permite generalización estadística. Los patrones que los propios entrevistados describen para sus pares sugieren concentración en perfiles H1--H2 para docentes e investigadores sociales, y mayor heterogeneidad para desarrolladores — lo que tensiona la viabilidad interactiva en esos grupos según el cruce H×M de §4.2. Ampliar la muestra cualitativa e incorporar validación con usuarios en sus contextos reales es una prioridad del trabajo futuro.
+\end{itemize}
 
 \hypertarget{nota-de-uso-de-ia-cuxf3digo-de-conducta-jaiio}{%
 \subsection{Nota de uso de IA (Código de Conducta
@@ -421,7 +427,7 @@ según fuera necesario y asumen plena responsabilidad por el contenido de
 la publicación.
 
 \hypertarget{references}{%
-\subsection{References}\label{references}}
+\subsection{Referencias}\label{referencias}}
 
 Mozilla AI. (s.f.). \emph{LocalScore} {[}Software{]}. GitHub.
 https://github.com/mozilla-ai/llamafile/tree/main/localscore
@@ -439,11 +445,6 @@ language models: Techniques, enhancements, applications, collaboration
 with LLMs, and trustworthiness. \emph{ACM Transactions on Intelligent
 Systems and Technology, 16}(6), Article 145.
 https://doi.org/10.1145/3768165
-
-Yazan, M., Verberne, S., \& Situmeang, F. (2024). \emph{The impact of
-quantization on retrieval-augmented generation: An analysis of small
-LLMs} (arXiv preprint arXiv:2406.10251).
-https://arxiv.org/abs/2406.10251
 
 Yi, R., Guo, L., Wei, S., Zhou, A., Wang, S., \& Xu, M. (2023).
 \emph{Edge MoE: Fast on-device inference of MoE-based large language

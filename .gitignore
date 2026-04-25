@@ -22,6 +22,10 @@ __pycache__/
 *.aux
 *.out
 *.synctex.gz
+*.bbl
+*.bcf
+*.blg
+*.run.xml
 
 # Archivos comprimidos
 *.zip

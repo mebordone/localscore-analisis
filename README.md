@@ -50,7 +50,7 @@ Los notebooks leen desde `data/raw/localscore-09-24-2025.db` y escriben tablas p
 ### 3. Datos originales
 
 El dump SQLite es un snapshot público del benchmark LocalScore tomado el 24-09-2025. La fuente original está en:
-https://github.com/mozilla-ai/llamafile/tree/main/localscore
+https://localscore.ai
 
 ## Datos cualitativos
 

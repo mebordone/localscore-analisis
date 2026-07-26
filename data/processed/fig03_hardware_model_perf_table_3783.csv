@@ -1,0 +1,67 @@
+H,M,perf_category,n,n_cell,pct
+H1,M1,Batch,7,11,63.6
+H1,M1,Interactivo fluido,1,11,9.1
+H1,M1,Interactivo mínimo,3,11,27.3
+H1,M2,Batch,23,49,46.9
+H1,M2,Interactivo fluido,6,49,12.2
+H1,M2,Interactivo mínimo,20,49,40.8
+H1,M4,Batch,7,7,100.0
+H2,M1,Batch,1,264,0.4
+H2,M1,Interactivo fluido,252,264,95.5
+H2,M1,Interactivo mínimo,11,264,4.2
+H2,M2,Batch,25,192,13.0
+H2,M2,Interactivo fluido,85,192,44.3
+H2,M2,Interactivo mínimo,82,192,42.7
+H2,M3,Batch,13,19,68.4
+H2,M3,Interactivo mínimo,6,19,31.6
+H2,M4,Batch,61,61,100.0
+H2,M5,Batch,3,3,100.0
+H3,M1,Interactivo fluido,9,9,100.0
+H3,M2,Batch,13,509,2.6
+H3,M2,Interactivo fluido,413,509,81.1
+H3,M2,Interactivo mínimo,83,509,16.3
+H3,M3,Batch,9,13,69.2
+H3,M3,Interactivo mínimo,4,13,30.8
+H3,M4,Batch,349,421,82.9
+H3,M4,Interactivo fluido,1,421,0.2
+H3,M4,Interactivo mínimo,71,421,16.9
+H3,M5,Batch,10,15,66.7
+H3,M5,Interactivo mínimo,5,15,33.3
+H4,M1,Interactivo fluido,198,200,99.0
+H4,M1,Interactivo mínimo,2,200,1.0
+H4,M2,Batch,2,127,1.6
+H4,M2,Interactivo fluido,110,127,86.6
+H4,M2,Interactivo mínimo,15,127,11.8
+H4,M3,Interactivo fluido,11,17,64.7
+H4,M3,Interactivo mínimo,6,17,35.3
+H4,M4,Batch,8,30,26.7
+H4,M4,Interactivo fluido,20,30,66.7
+H4,M4,Interactivo mínimo,2,30,6.7
+H5,M1,Interactivo fluido,3,3,100.0
+H5,M2,Batch,5,344,1.5
+H5,M2,Interactivo fluido,325,344,94.5
+H5,M2,Interactivo mínimo,14,344,4.1
+H5,M3,Interactivo fluido,17,21,81.0
+H5,M3,Interactivo mínimo,4,21,19.0
+H5,M4,Batch,52,493,10.5
+H5,M4,Interactivo fluido,296,493,60.0
+H5,M4,Interactivo mínimo,145,493,29.4
+H5,M5,Batch,1,1,100.0
+H6,M1,Interactivo fluido,3,3,100.0
+H6,M2,Batch,1,276,0.4
+H6,M2,Interactivo fluido,267,276,96.7
+H6,M2,Interactivo mínimo,8,276,2.9
+H6,M3,Interactivo fluido,12,14,85.7
+H6,M3,Interactivo mínimo,2,14,14.3
+H6,M4,Batch,15,459,3.3
+H6,M4,Interactivo fluido,290,459,63.2
+H6,M4,Interactivo mínimo,154,459,33.6
+H6,M5,Batch,3,13,23.1
+H6,M5,Interactivo fluido,7,13,53.8
+H6,M5,Interactivo mínimo,3,13,23.1
+H7,M2,Interactivo fluido,39,39,100.0
+H7,M3,Interactivo fluido,1,1,100.0
+H7,M4,Batch,1,63,1.6
+H7,M4,Interactivo fluido,47,63,74.6
+H7,M4,Interactivo mínimo,15,63,23.8
+H7,M5,Interactivo fluido,1,1,100.0

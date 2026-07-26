@@ -30,6 +30,9 @@ __pycache__/
 # Archivos comprimidos
 *.zip
 
+# Cache crudo LocalScore (miles de JSON; usar CSV enriquecido en data/processed/)
+data/raw/localscore-cache/
+
 # Binarios de audio/video (datos privados)
 *.mkv
 *.mp3
